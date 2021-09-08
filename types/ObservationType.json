@@ -1,0 +1,51 @@
+{
+    "description": "Base class for all observations recorded on spatial features",
+    "allOf": [
+        {
+            "$ref": "../types/ResourceType.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "observationDate": {
+                    "$ref": "../types/DateTimeType.json",
+                    "description": "Captures the point in time of the observation in ISO date format (including time zone). UTC expected."
+                },
+                "phenomenonTime": {
+                    "description": "Optionally provides the date/time period over which the observation is expected to apply.",
+                    "anyOf" : [
+                        null,
+                        {
+                          "$ref": "../types/TimePeriodType.json"
+                        }
+                    ],
+                    "nullable": true
+                },
+                "feature": {                    
+                    "description": "A link and/or identifier to the feature to which this Observation applies.",
+                    "$ref": "../types/FeatureReferenceType.json"                    
+                },
+                "holding": {                    
+                    "description": "If the observation is associated with a Holding Resource, an ID or link to this resource.",
+                    "anyOf" : [
+                        null,
+                        {
+                          "$ref": "../types/FeatureReferenceType.json"
+                        }
+                    ],
+                    "nullable": true
+                },
+                "responsible": {
+                    "description": "The person or other entity responsible for this observation.",
+                    "type": ["string", null],
+                    "nullable": true
+                },
+                "remark": {
+                    "description": "A comment, note, or structured remark for this observation.",
+                    "type": ["string", null],
+                    "nullable": true
+                }
+            }
+        }
+    ]
+}

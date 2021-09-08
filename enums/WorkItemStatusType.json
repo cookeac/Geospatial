@@ -1,0 +1,15 @@
+{
+    "description": "Status values for work items.",
+  
+    "type": "string",
+  
+    "enum": [
+      "Planned",
+      "Scheduled",
+      "Cancelled",
+      "InProgress",
+      "Paused",
+      "PartiallyCompleted",
+      "Completed"
+    ]
+  }

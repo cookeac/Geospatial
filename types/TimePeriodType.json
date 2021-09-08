@@ -1,0 +1,7 @@
+{
+    "description": "An ISO 8601-compliant time PERIOD. MUST include time zone. SHOULD be UTC (Z). Common syntax is two dates separated by forward slash.",
+    
+    "type": "string",
+  
+    "format": "date-time"
+  }

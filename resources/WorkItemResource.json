@@ -1,0 +1,29 @@
+{
+    "description": "Defines a work item (planned or recorded). This is a concrete class (you can have a work item) or you can include it specific derived classes.",
+    "allOf": [
+        {
+            "$ref": "../types/ObservationType.json"
+        },
+        {
+            "type": "object",
+
+            "$comment": "TODO: Still to add other work item properties such as allocated people and equipment.",
+
+            "properties": {
+                "operation": {
+                    "type": "string",
+                    "description": "Defines the operation from a list of known operation types."
+                },
+                "status": {                    
+                    "description": "The status of the work item - indicates planned, scheduled, and other values.",
+                    "$ref": "../enums/WorkItemStatusType.json"                    
+                },
+                "priority": {                    
+                    "description": "The priority of the item for scheduling or implementation.",
+                    "$ref": "../enums/WorkItemPriorityType.json",
+                    "nullable": true
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "description": "Used to reference a registered business entity with name and registration ID. Extends RelationType",
+    "allOf": [
+        {
+            "$ref": "../types/RelationType.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "leiCode": {
+                    "type": ["string", null],
+                    "description": "The LEI Code is the national Legal Entity Identifier for the business within its country.",
+                    "nullable": true
+                },
+                "name": {
+                    "type": ["string", null],
+                    "description": "A human-readable display name for the organisation or business.",
+                    "nullable": true
+                },
+                "registration": {
+                    "description": "Where relevant, a business may be identified by its registration ID (using Scheme+ID).",
+                    "anyOf" : [
+                        null,
+                        {
+                          "$ref": "../types/IdentifierType.json"
+                        }
+                    ],
+                    "nullable": true
+                }
+            }
+        }
+    ]
+}

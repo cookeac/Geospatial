@@ -1,0 +1,33 @@
+{
+    "description": "Used to reference a known resource with ID as well as URI. Extends RelationType",
+    "allOf": [
+        {
+            "$ref": "../types/RelationType.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": ["string", null],
+                    "description": "Provides a known, within-system ID for the resource.",
+                    "nullable": true
+                },
+                "identifier": {
+                    "description": "Provides a system-independent, scheme+ID identifier for the resource.",
+                    "anyOf" : [
+                        null,
+                        {
+                          "$ref": "../types/IdentifierType.json"
+                        }
+                    ],
+                    "nullable": true
+                },
+                "name": {
+                    "type": ["string", null],
+                    "description": "A human-readable display name for the resource.",
+                    "nullable": true
+                }
+            }
+        }
+    ]
+}

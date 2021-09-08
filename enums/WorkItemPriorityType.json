@@ -1,0 +1,14 @@
+{
+    "description": "Priority values for work items.",
+  
+    "type": ["string", null],
+  
+    "enum": [
+      "Immediately",
+      "SoonAsPossible",
+      "High",
+      "Medium",
+      "Low",
+      null
+    ]
+  }
